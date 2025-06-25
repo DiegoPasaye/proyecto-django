@@ -1,0 +1,57 @@
+{% extends "inicio/encabezado.html" %}
+{%block titulo%}Principal {%endblock%}
+
+{% load static %}
+
+{% block imagen %}
+	{% static 'inicio/images/home.png' %}
+{% endblock %}
+
+{% block encabezado %}
+	Principal
+{% endblock %}
+
+{% block texto %}
+	Principal
+{% endblock %}
+
+
+<div class="page-content">
+{% block contenido%}
+
+<!-- Contenido Principal-->
+	 	<div class="page-content">
+
+
+			<!--Encabezdo -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>Alumnos
+				    <small>Lista de Alumnos </small></h3>
+				</div>
+
+			</div>
+			<!-- /Encabezado-->
+
+
+    <div class="breadcrumb-line">
+      <ul class="breadcrumb">
+        <li>
+          <a href="{% url 'Principal' %}">
+            {% if request.path == '/' %}
+              Principal
+            {% else %}
+              Principal {{ request.path }}
+            {% endif %}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+
+		</div>
+		<!-- /Contenido Principal-->
+
+{% endblock%}
+</div>
