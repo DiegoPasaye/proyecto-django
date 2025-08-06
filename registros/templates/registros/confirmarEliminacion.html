@@ -1,0 +1,59 @@
+{% extends "inicio/encabezado.html" %}
+{%block titulo%}Eliminar comentarios {%endblock%}
+
+{% load static %}
+{% block imagen %}
+	{% static 'inicio/images/contacto.png' %}
+{% endblock %}
+
+{% block encabezado %}
+	Eliminar comentario
+{% endblock %}
+
+{% block texto %}
+	Elimiar comentario
+{% endblock %}
+
+
+ {% block contenido%}
+
+	<!-- Contenido Principal-->
+	 	<div class="page-content">
+
+
+			<!--Encabezdo -->
+    <div class="page-header">
+      <div class="page-title">
+        <h3>Eliminar comentarios
+          <small>Eliminar comentarios</small>
+        </h3>
+      </div>
+    </div>
+	<div class="breadcrumb-line">
+		<ul class="breadcrumb">
+			<li>
+			<a href="{% url 'Principal' %}">
+				{% if request.path == '/' %}
+				Principal
+				{% else %}
+				Principal {{ request.path }}
+				{% endif %}
+			</a>
+			</li>
+		</ul>
+		</div>
+			<!-- /Encabezado-->
+
+		    <form action="" method="POST">
+                {% csrf_token %}
+                <div class="callout callout-danger fade in">
+                <h5>Eliminando Comentario</h5>
+                <p>¿Estas seguro de que deseas <strong>Eliminar</strong> el comentario seleccionado?. </p>
+                </div>
+                <button type="submit" class="btn btn-danger">Si</button>
+                <a href="{% url 'Comentarios'%}" class="btn btn-primary">Cancelar</a>
+            </form>
+    </div>
+{% endblock%}
+
+

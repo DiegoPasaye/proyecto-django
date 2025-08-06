@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <form action="" method="get">
+            nombre:
+            <input type="text" name="nombre" />
+            <input type="submit" value="buscar" />
+        </form>
+
+        <h2 id="resultado: {{ nombre|safe }}">
+        </h2>
+        <!-- SI VA AQUI LA IMAGEN??? -->
+
+
+        <script type="application/javascript">
+            var busqueda = new URLSearchParams(document.location.search);
+            if (busqueda.has("nombre")){
+                document.getElementById("resultado").innerHTML = "Resultado: " + busqueda.get("nombre")
+            }
+        </script>
+    </body>
+</html>

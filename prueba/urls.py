@@ -27,6 +27,30 @@ urlpatterns = [
     path('contacto/',views.contacto, name="Contacto"),
     path('formulario/', views.formulario, name="Formulario"),
     path('ejemplo/', views.ejemplo, name="Ejemplo"),
+    path('comentarios/', views_registros.comentarios, name="Comentarios"),
+    path('registrar/',views_registros.registrar,name="Registrar"),
+    path('eliminarComentario/<int:id>/', views_registros.eliminarComentarioContacto,name='Eliminar'),
+    path('formEditarComentario/<int:id>/',views_registros.consultarComentarioIndividual, name='ConsultaIndividual'),
+    path('editarComentario/<int:id>/',views_registros.editarComentarioContacto,name='Editar'),
+
+    path('consultas1',views_registros.consultar1,name='Consultas'),
+    path('consultas2',views_registros.consultar2,name='Consultas'),
+    path('consultas3',views_registros.consultar3,name='Consultas'),
+    path('consultas4',views_registros.consultar4,name='Consultas'),
+    path('consultas5',views_registros.consultar5,name='Consultas'),
+    path('consultas6',views_registros.consultar6,name='Consultas'),
+    path('consultas7',views_registros.consultar7,name='Consultas'),
+
+
+    path('consultaFirma1',views_registros.consultaFirma1,name='ConsultaFirma'),
+    path('consultaFirma2',views_registros.consultaFirma2,name='ConsultaFirma'),
+    path('consultaFirma3',views_registros.consultaFirma3,name='ConsultaFirma'),
+    path('consultaFirma4',views_registros.consultaFirma4,name='ConsultaFirma'),
+    path('consultaFirma5',views_registros.consultaFirma5,name='ConsultaFirma'),
+
+    path('consultasSQL',views_registros.consultasSQL,name="sql"),
+
+    path('seguridad',views_registros.seguridad,name="seguridad"),
 ]
 
 if settings.DEBUG:

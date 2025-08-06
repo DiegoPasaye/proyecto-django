@@ -1,0 +1,61 @@
+{% extends "inicio/encabezado.html" %}
+{%block titulo%}Editar comentarios {%endblock%}
+
+{% load static %}
+{% block imagen %}
+	{% static 'inicio/images/contacto.png' %}
+{% endblock %}
+
+{% block encabezado %}
+	Editar comentario
+{% endblock %}
+
+{% block texto %}
+	Editar comentario
+{% endblock %}
+
+
+ {% block contenido%}
+
+	<!-- Contenido Principal-->
+	 	<div class="page-content">
+
+
+			<!--Encabezdo -->
+    <div class="page-header">
+      <div class="page-title">
+        <h3>Editar comentarios
+          <small>Editar comentarios</small>
+        </h3>
+      </div>
+    </div>
+	<div class="breadcrumb-line">
+		<ul class="breadcrumb">
+			<li>
+			<a href="{% url 'Principal' %}">
+				{% if request.path == '/' %}
+				Principal
+				{% else %}
+				Principal {{ request.path }}
+				{% endif %}
+			</a>
+			</li>
+		</ul>
+		</div>
+			<!-- /Encabezado-->
+
+        <div class="page-header">
+        <div class="page-title">
+
+
+        </div>
+
+        <form class="form-horizontal" action="{% url 'Editar' comentario.id%}" method="POST" role="form">
+             {% csrf_token %}
+            <input value={{comentario.usuario}} name="usuario" type="text" class="form-control">
+            <textarea name="mensaje" cols="50" rows="10" class="form-control">{{comentario.mensaje}} </textarea>
+            <br>
+            <button type="submit" class="btn btn-danger">Guardar cambios</button>
+        </div>
+    </div>
+{% endblock%}
